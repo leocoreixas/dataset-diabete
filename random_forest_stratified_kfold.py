@@ -57,8 +57,7 @@ for i, (train_index, test_index) in enumerate(skf.split(X, y)):
     rf.fit(X[train_index], y[train_index])
     y_pred = rf.predict(X[test_index])
     conf = confusion_matrix(y_pred, y[test_index])
-    print("Matriz de confusão index:" + str(i))
-    print(conf)
+    
     total = len(y_pred)
     # Acurácia
     acuracia = (conf[0][0] + conf[1][1] + conf[2][2]) / total

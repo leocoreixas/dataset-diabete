@@ -38,13 +38,6 @@ n_splits = 10
 skf = StratifiedKFold(n_splits=n_splits)
 skf.get_n_splits(X, y)
 
-X = np.array(data_matrix).astype(float)
-y = np.array(target_array).astype(float)
-
-y_int = y.round().astype(np.int64)
-# Encontrar a contagem de cada classe presente no array y_int
-contagem_classes = np.bincount(y_int)
-print("Contagem de classes:", contagem_classes)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=0)
 
